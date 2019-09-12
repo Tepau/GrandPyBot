@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" type="text/css" />
+        <title>{{ title }}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+
+    <body>
+        <div id="contenu_page">
+            <header>
+                <h1>Bienvenue chez GrandPyBot</h1>
+                <div id="header_img">
+                    <img src="{{ url_for('static', filename='img/robot.png') }}" alt="logo_robot">
+                </div>
+            </header> 
+            
+            <section>
+                <div id="chargement">
+                    <img src="{{ url_for('static', filename='img/chargement1.gif') }}" alt="chargement">
+                </div>
+                <div id="contenu_section">
+                    <p id="phrase">{{ phrase }}</p>
+                    <form>
+                        <p>Pose donc une question à GrandPyBot : </p>
+                        <input type="text" name="question" id="question" placeholder="Connais tu l'adresse d'OpenClassrooms à Paris ?" size="40">
+                        <button id="bouton_submit" onclick="call_ajax()">Envoyer</button>
+                    </form>
+                </div>
+            </section>
+            
+            <footer>
+                <hr>
+                <div id="nom">Lemaitre-Salmon Malaury</div>
+                <div id="github"><a href="https://github.com/Tepau/GrandPyBot"><img src="{{ url_for('static', filename='img/logo_github.png') }}" alt="logo_github"></a></div>
+            </footer>
+        </div>  
+        <script src= "{{ url_for('static', filename='ajax.js') }}"></script>
+        <script src="http://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src= "{{ url_for('static', filename='grandPyBot.js') }}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLDyy4GQoJJK2UOYhtuu1BmsZBhjofpkI"
+        async defer></script>
+    </body>
+</html>
+
