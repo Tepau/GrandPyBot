@@ -1,4 +1,4 @@
-from app.constantes import key
+from constantes import key
 import googlemaps
 
 
@@ -7,7 +7,7 @@ class GoogleMap:
      a place through the api "googlemap"'''
 
     def __init__(self, search):
-        self.gmaps = googlemaps.Client(key= key)
+        self.gmaps = googlemaps.Client(key=key)
         self.geocode_result = self.gmaps.geocode(search)
 
     def findAdress(self):
@@ -24,11 +24,13 @@ class GoogleMap:
     def wikiSearch(self):
         # Get informations needed for a wikipedia search
         location = self.geocode_result[0]["address_components"][1]["long_name"]
-        return location
+        ville = self.geocode_result[0]["address_components"][2]["long_name"]
+        pays = self.geocode_result[0]["address_components"][5]["long_name"]
+        return location + ", " + ville + ", " + pays
 
 
 if __name__ == '__main__':
-    app = GoogleMap('openclassrooms, paris')
+    app = GoogleMap('esperance reuilly paris')
     print(app.findAdress())
     print(app.findLocation())
     print(app.wikiSearch())

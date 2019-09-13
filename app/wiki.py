@@ -10,10 +10,10 @@ class Wiki:
     def infos_sup(self):
         # Get the first three sentences of a wikipedia page
         wikipedia.set_lang("fr")
-        infos_sup = wikipedia.summary(self.adresse, sentences=3)
+        infos_sup = wikipedia.summary(self.adresse, sentences=1)
         return infos_sup
 
 
 if __name__ == '__main__':
-    app = Wiki('cite paradis')
+    app = Wiki('Boulevard Carnot, Paris, France')
     print(app.infos_sup())

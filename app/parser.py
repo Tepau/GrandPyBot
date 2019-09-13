@@ -29,4 +29,5 @@ class Parser:
 
 if __name__ == '__main__':
     app = Parser()
-    app.cleanSentence("Connais tu l'adresse d'openclassrooms paris ?")
+    print(app.cleanSentence("connais tu l'adresse de l'Esperance reuilly paris"))
+
