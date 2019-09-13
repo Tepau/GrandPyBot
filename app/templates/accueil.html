@@ -25,7 +25,7 @@
                     <form>
                         <p>Pose donc une question à GrandPyBot : </p>
                         <input type="text" name="question" id="question" placeholder="Connais tu l'adresse d'OpenClassrooms à Paris ?" size="40">
-                        <button id="bouton_submit" onclick="call_ajax()">Envoyer</button>
+                        <button id="bouton_submit">Envoyer</button>
                     </form>
                 </div>
             </section>
@@ -39,7 +39,7 @@
         <script src= "{{ url_for('static', filename='ajax.js') }}"></script>
         <script src="http://code.jquery.com/jquery-3.4.1.js"  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <script src= "{{ url_for('static', filename='grandPyBot.js') }}"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key={googleApiKey}"
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ googleApiKey }}"
         async defer></script>
     </body>
 </html>

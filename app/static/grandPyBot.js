@@ -1,9 +1,5 @@
 var form = document.querySelector("form");
 
-function call_ajax(){
-	console.log("test");
-}
-
 $("form").on("submit", function(e){
 	e.preventDefault();
 	$('#contenu_section').hide();
