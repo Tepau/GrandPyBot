@@ -34,3 +34,4 @@ if __name__ == '__main__':
     print(app.findAdress())
     print(app.findLocation())
     print(app.wikiSearch())
+    print(app.geocode_result)
