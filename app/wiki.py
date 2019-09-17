@@ -10,7 +10,7 @@ class Wiki:
     def infos_sup(self):
         # Get the first three sentences of a wikipedia page
         wikipedia.set_lang("fr")
-        infos_sup = wikipedia.summary(self.adresse, sentences=1)
+        infos_sup = wikipedia.summary(self.adresse, sentences=3)
         return infos_sup
 
 
