@@ -1,11 +1,11 @@
-#contenu_page
+#page_content
 {
 	background-color: #E0DBCF;
 	width: 90%;
 	margin: auto;
 }
 
-#phrase
+#sentence
 {
 	display: none;
 }
@@ -57,14 +57,14 @@ footer img
 	height: 60px;
 }
 
-#chargement
+#loading
 {
 	display:none;
 }
 
 @media all and (max-width: 700px)
 {
-    #contenu_page
+    #page_content
     {
     	width: auto;
     }
@@ -97,7 +97,7 @@ footer img
 		margin-bottom: 30px;
 	}
 
-	#bouton
+	#button
 	{
 		margin-top: 20px;
 	}

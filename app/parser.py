@@ -8,7 +8,8 @@ class Parser:
         self.wordslist = \
             [line.strip() for line in io.open('stopwords.txt', encoding="utf8")]
 
-    def dropIfNotAlpha(self, sentence):
+    @staticmethod
+    def drop_if_not_alpha(sentence):
         # Removes elements of a string that are not letters
         for letter in sentence:
             if not letter.isalpha():
@@ -16,18 +17,18 @@ class Parser:
                     sentence = sentence.replace(letter, " ")
         return sentence
 
-    def cleanSentence(self, sentence):
+    def clean_sentence(self, sentence):
         # Returns words that are not in the file
-        listSentence = self.dropIfNotAlpha(sentence).split(" ")
-        listSentence = [word.lower() for word in listSentence if len(word) > 0]
-        for word in listSentence:
+        list_sentence = self.drop_if_not_alpha(sentence).split(" ")
+        list_sentence = [word.lower() for word in list_sentence if len(word) > 0]
+        for word in list_sentence:
             for words in self.wordslist:
-                listSentence = [i for i in listSentence if i != words]
+                list_sentence = [i for i in list_sentence if i != words]
 
-        return " ".join(listSentence)
+        return " ".join(list_sentence)
 
 
 if __name__ == '__main__':
     app = Parser()
-    print(app.cleanSentence("connais tu l'adresse de l'Esperance reuilly paris"))
+    print(app.clean_sentence("connais tu l'adresse de l'Esperance reuilly paris"))
 

@@ -1,18 +1,21 @@
 var form = document.querySelector("form");
 
+// Add an event when the form is validated
 $("form").on("submit", function(e){
 	e.preventDefault();
-	$('#contenu_section').hide();
-	$('#chargement').show();
-	var phrase = e.target.elements.question.value
+	//Mask the form and show image during loading time
+	$('#section_content').hide();
+	$('#loading').show();
+	var sentence = e.target.elements.question.value
 	var data = new FormData(form);
-	ajaxPost("/api/map", data, function(reponse){
-		elements = JSON.parse(reponse)	
-		document.getElementById("phrase").style.display = "block";
+	ajaxPost("/api/map", data, function(response){
+		elements = JSON.parse(response)
+		console.log(elements);
+		document.getElementById("sentence").style.display = "block";
 		form.style.display = "none";
 		var sectionElt = document.querySelector("section");
 		var pElt = document.createElement("p");
-		pElt.textContent = "Bien sûr fiston, voici l'adresse : " + elements["adresse"];
+		pElt.textContent = "Bien sûr fiston, voici l'adresse : " + elements["adress"];
 		sectionElt.appendChild(pElt);
 		var divMapElt = document.createElement("div");
 		divMapElt.id = "map";
@@ -25,19 +28,21 @@ $("form").on("submit", function(e){
     			center: {lat: elements["latlon"][0], lng: elements["latlon"][1]},
     			zoom: 8
   			});
-    		// Nous ajoutons un marqueur
+    		//  Add a marker to the map
 			var marker = new google.maps.Marker({
-				// Nous définissons sa position (syntaxe json)
+				// Marker's position)
 				position: {lat: elements["latlon"][0], lng: elements["latlon"][1]},
-				// Nous définissons à quelle carte il est ajouté
+				// Map's marker
 				map: map
 			});
 		}
 
 		initMap();
-		$('#chargement').hide();
-		$('#contenu_section').show();
-	
+		// Mask the loading picture and print a response
+		$('#loading').hide();
+		$('#section_content').show();
+
+	    // Add a paragraph containing wikipedia info
 		var wikiElt = document.createElement("p");
 		wikiElt.textContent = "Reste ici j'ai autre chose à te raconter. " + elements["infos"];
 		sectionElt.appendChild(wikiElt);

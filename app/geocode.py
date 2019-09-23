@@ -3,35 +3,41 @@ import googlemaps
 
 
 class GoogleMap:
-    '''class who recovers informations about
-     a place through the api "googlemap"'''
+    """class who recovers informations about
+     a place through the api "googlemap\""""
 
-    def __init__(self, search):
+    def __init__(self):
         self.gmaps = googlemaps.Client(key=key)
-        self.geocode_result = self.gmaps.geocode(search)
 
-    def findAdress(self):
+
+    def find_adress(self, search):
         # Get the full adress of a place
-        adresse = self.geocode_result[0]["formatted_address"]
-        return adresse
+        geocode_result = self.gmaps.geocode(search)
+        adress = geocode_result[0]["formatted_address"]
+        return adress
 
-    def findLocation(self):
+
+    def find_location(self, search):
         # Get the longitude and latitude of a place
-        lat = self.geocode_result[0]["geometry"]["location"]["lat"]
-        lon = self.geocode_result[0]["geometry"]["location"]["lng"]
-        return (lat, lon)
+        geocode_result = self.gmaps.geocode(search)
+        latitude = geocode_result[0]["geometry"]["location"]["lat"]
+        longitude = geocode_result[0]["geometry"]["location"]["lng"]
+        return (latitude, longitude)
 
-    def wikiSearch(self):
-        # Get informations needed for a wikipedia search
-        location = self.geocode_result[0]["address_components"][1]["long_name"]
-        ville = self.geocode_result[0]["address_components"][2]["long_name"]
-        pays = self.geocode_result[0]["address_components"][5]["long_name"]
-        return location + ", " + ville + ", " + pays
+    def wiki_search(self, search):
+        # Get informations needed for a wikipedia research
+        geocode_result = self.gmaps.geocode(search)
+        location = geocode_result[0]["address_components"][1]["long_name"]
+        ville = geocode_result[0]["address_components"][2]["long_name"]
+        if len(geocode_result[0]["address_components"]) > 5:
+            pays = geocode_result[0]["address_components"][5]["long_name"]
+            return location + ", " + ville + ", " + pays
+        return location + ", " + ville
 
 
 if __name__ == '__main__':
-    app = GoogleMap('esperance reuilly paris')
-    print(app.findAdress())
-    print(app.findLocation())
-    print(app.wikiSearch())
-    print(app.geocode_result)
+    app = GoogleMap()
+    print(app.find_adress('openclassrooms paris'))
+    print(app.find_location('openclassrooms paris'))
+    print(app.wiki_search('openclassrooms paris'))
+
