@@ -17,8 +17,7 @@ function ajaxGet(url, callback) {
     req.send(null);
 }
 
-// Exécute un appel AJAX POST
-// Prend en paramètres l'URL cible, la donnée à envoyer et la fonction callback appelée en cas de succès
+// Exécute un appel AJAX POST// Prend en paramètres l'URL cible, la donnée à envoyer et la fonction callback appelée en cas de succès
 // Le paramètre isJson permet d'indiquer si l'envoi concerne des données JSON
 function ajaxPost(url, data, callback, isJson) {
     var req = new XMLHttpRequest();
@@ -29,6 +28,11 @@ function ajaxPost(url, data, callback, isJson) {
             callback(req.responseText);
         } else {
             console.error(req.status + " " + req.statusText + " " + url);
+            $('#loading').hide();
+            var sectionElt = document.querySelector("section");
+		    var pElt = document.createElement("p");
+		    pElt.textContent = "Erreur de Recherche, actualisez la page";
+		    sectionElt.appendChild(pElt);
         }
     });
     req.addEventListener("error", function () {
