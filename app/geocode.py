@@ -1,4 +1,4 @@
-from app.constantes import key
+from constantes import key
 import googlemaps
 
 

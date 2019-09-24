@@ -53,7 +53,7 @@ def test_find_location(monkeypatch):
 
     result_location = (48.8748465, 2.3504873)
 
-    def mockreturn(position, test):
+    def mockreturn(position, search):
         return google_replace
 
     monkeypatch.setattr("app.geocode.googlemaps.Client.geocode", mockreturn)
@@ -66,7 +66,7 @@ def test_find_adress(monkeypatch):
 
     result_adress = "7 Cité Paradis, 75010 Paris, France"
 
-    def mockreturn(position, test):
+    def mockreturn(position, search):
         return google_replace
 
     monkeypatch.setattr('app.geocode.googlemaps.Client.geocode', mockreturn)
@@ -79,7 +79,7 @@ def test_wiki_search(monkeypatch):
 
     result_wiki_search = "Cité Paradis, Paris, France"
 
-    def mockreturn(position, test):
+    def mockreturn(position, search):
         return google_replace
 
     monkeypatch.setattr('app.geocode.googlemaps.Client.geocode', mockreturn)
