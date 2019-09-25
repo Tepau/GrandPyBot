@@ -47,6 +47,7 @@ $("form").on("submit", function(e){
 		wikiElt.textContent = "Reste ici j'ai autre chose à te raconter. " + elements["infos"];
 		sectionElt.appendChild(wikiElt);
 		wikiElt.style.textAlign = "justify";
+		wikiElt.style.padding = "0px 17px 0px 17px";
 	});
 
 });
