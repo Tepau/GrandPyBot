@@ -3,7 +3,7 @@ from flask import render_template, request, jsonify
 from app.parser import Parser
 from app.geocode import GoogleMap
 from app.wiki import WikipediaInformation
-
+from app.constantes import GoogleMapsApiKey
 
 
 @app.route('/')
