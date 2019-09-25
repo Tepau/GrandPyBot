@@ -8,7 +8,7 @@ import os
 
 
 @app.route('/')
-@app.route('/accueil', methods=['GET', 'POST'])
+@app.route('/accueil')
 def accueil():
     return render_template("accueil.html", title="GrandPyBot", googleApiKey=os.environ.get('GOOGLE_MAP_API_KEY'))
 
