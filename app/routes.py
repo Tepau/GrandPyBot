@@ -9,7 +9,7 @@ from app.wiki import WikipediaInformation
 @app.route('/')
 @app.route('/accueil', methods=['GET', 'POST'])
 def accueil():
-    return render_template("accueil.html", title="GrandPyBot", googleApiKey=['GOOGLE_MAP_API_KEY'])
+    return render_template("accueil.html", title="GrandPyBot", googleApiKey=[GOOGLE_MAP_API_KEY])
 
 
 @app.route('/api/map', methods=['GET', 'POST'])
