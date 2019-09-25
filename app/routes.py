@@ -9,7 +9,7 @@ from app.constantes import GoogleMapsApiKey
 @app.route('/')
 @app.route('/accueil', methods=['GET', 'POST'])
 def accueil():
-    return render_template("accueil.html", title="GrandPyBot", googleApiKey=GoogleMapsApiKey)
+    return render_template("accueil.html", title="GrandPyBot", googleApiKey=['GOOGLE_MAP_API_KEY'])
 
 
 @app.route('/api/map', methods=['GET', 'POST'])
