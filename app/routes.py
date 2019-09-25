@@ -3,13 +3,14 @@ from flask import render_template, request, jsonify
 from app.parser import Parser
 from app.geocode import GoogleMap
 from app.wiki import WikipediaInformation
+import os
 
 
 
 @app.route('/')
 @app.route('/accueil', methods=['GET', 'POST'])
 def accueil():
-    return render_template("accueil.html", title="GrandPyBot", googleApiKey=['GOOGLE_MAP_API_KEY'])
+    return render_template("accueil.html", title="GrandPyBot", googleApiKey=os.environ.get('GOOGLE_MAP_API_KEY'))
 
 
 @app.route('/api/map', methods=['GET', 'POST'])

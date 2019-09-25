@@ -1,4 +1,5 @@
 import googlemaps
+import os
 
 
 class GoogleMap:
@@ -6,7 +7,7 @@ class GoogleMap:
      a place through the api "googlemap\""""
 
     def __init__(self):
-        self.gmaps = googlemaps.Client(key=['KEY'])
+        self.gmaps = googlemaps.Client(key=os.environ.get('KEY'))
 
 
     def find_adress(self, search):
