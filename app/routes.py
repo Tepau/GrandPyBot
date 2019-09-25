@@ -13,7 +13,7 @@ def accueil():
     return render_template("accueil.html", title="GrandPyBot", googleApiKey=os.environ.get('GOOGLE_MAP_API_KEY'))
 
 
-@app.route('/api/map', methods=['GET', 'POST'])
+@app.route('/api/map', methods=['POST'])
 def question():
     """
     Get input, parse it, get position, get info, get story
