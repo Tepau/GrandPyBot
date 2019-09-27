@@ -6,7 +6,7 @@ class Parser:
 
     def __init__(self):
         self.wordslist = \
-            [line.strip() for line in io.open('stopwords.txt', encoding="utf8")]
+            [line.strip() for line in io.open('static/stopwords.txt', encoding="utf8")]
 
     @staticmethod
     def drop_if_not_alpha(sentence):
