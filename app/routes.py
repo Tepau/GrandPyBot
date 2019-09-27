@@ -26,4 +26,4 @@ def question():
     adress = GoogleMap().find_adress(words)
     location = GoogleMap().wiki_search(words)
     infos = WikipediaInformation(location).summary_informations()
-    return jsonify(search=words, latlon=latlon, adress=adress, infos=infos)
+    return jsonify(latlon=latlon, adress=adress, infos=infos)
