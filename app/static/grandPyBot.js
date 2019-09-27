@@ -6,7 +6,6 @@ $("form").on("submit", function(e){
 	//Mask the form and show image during loading time
 	$('#section_content').hide();
 	$('#loading').show();
-	var sentence = e.target.elements.question.value
 	var data = new FormData(form);
 	ajaxPost("/api/map", data, function(response){
 		elements = JSON.parse(response)
