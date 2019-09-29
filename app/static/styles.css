@@ -30,6 +30,7 @@ section
 {
 	display: flex;
 	flex-direction: column;
+	height: 350px;
 	text-align: center;
 	margin-top: 50px;
 
@@ -89,7 +90,7 @@ footer img
 
 	section
 	{
-
+        height : 600px;
 		margin-top: 5px;
 		margin-bottom: 30px;
 	}
