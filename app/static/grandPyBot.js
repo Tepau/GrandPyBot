@@ -39,7 +39,7 @@ $("form").on("submit", function(e){
 		initMap();
 		// Mask the loading picture and print a response
 		$('#loading').hide();
-		$('#section_content').show();
+
 
 	    // Add a paragraph containing wikipedia info
 		var wikiElt = document.createElement("p");
