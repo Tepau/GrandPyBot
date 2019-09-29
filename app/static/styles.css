@@ -90,9 +90,7 @@ footer img
 
 	section
 	{
-		display: flex;
-		flex-direction: column;
-		height : 500px;
+
 		margin-top: 5px;
 		margin-bottom: 30px;
 	}
