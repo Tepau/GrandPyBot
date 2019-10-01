@@ -10,13 +10,11 @@ $("form").on("submit", function(e){
 	ajaxPost("/api/map", data, function(response){
 		elements = JSON.parse(response)
 		console.log(elements);
-		document.getElementById("sentence").style.display = "block";
 		form.style.display = "none";
 		var sectionElt = document.querySelector("section");
-		var pElt = document.createElement("p");
-		pElt.textContent = "Bien sûr fiston, voici l'adresse : " + elements["adress"];
-		pElt.style.marginBottom = "15px";
-		sectionElt.insertAdjacentHTML("afterbegin", pElt);
+		var adressElt = document.getElementById("adress");
+		adressElt.textContent = "Bien sûr fiston, voici l'adresse : " + elements["adress"];
+		adressElt.style.marginBottom = "15px";
 		var divMapElt = document.getElementById("map");
 		divMapElt.style.display = "block";
 		function initMap() {
