@@ -35,8 +35,7 @@ $("form").on("submit", function(e){
 		initMap();
 		// Mask the loading picture and print a response
 		$('#loading').hide();
-$('<p>Deuxième élément bis</p>').insertAfter($('li:nth-child(2)'));
-Ajout d'un élément de liste à puces après le deuxième élément
+
 
 	    // Add a paragraph containing wikipedia info
 		var wikiElt = document.createElement("p");
