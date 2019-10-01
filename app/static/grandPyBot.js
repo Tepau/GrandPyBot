@@ -16,7 +16,7 @@ $("form").on("submit", function(e){
 		var pElt = document.createElement("p");
 		pElt.textContent = "Bien sûr fiston, voici l'adresse : " + elements["adress"];
 		pElt.style.marginBottom = "15px";
-		sectionElt.insertAdjacentHTML("afterbegin", pElt.innerHTML);
+		sectionElt.insertAdjacentHTML("afterbegin", pElt);
 		var divMapElt = document.getElementById("map");
 		divMapElt.style.display = "block";
 		function initMap() {
