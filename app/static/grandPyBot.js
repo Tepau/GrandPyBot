@@ -15,7 +15,7 @@ $("form").on("submit", function(e){
 		var sectionElt = document.querySelector("section");
 		var pElt = document.createElement("p");
 		pElt.textContent = "Bien sûr fiston, voici l'adresse : " + elements["adress"];
-		sectionElt.insertAdjacentHTML("afterbegin", pElt);
+		sectionElt.insertAdjacentHTML("afterbegin", pElt.innerHTML);
 		var divMapElt = document.getElementById("map");
 		divMapElt.style.display = "block";
 		function initMap() {
