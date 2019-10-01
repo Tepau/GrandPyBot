@@ -36,6 +36,14 @@ section
 
 }
 
+#map
+{
+    height : 60%;
+    width : 60%;
+    margin : auto;
+    display : none;
+}
+
 section p 
 {
 	font-size: 1.3em;

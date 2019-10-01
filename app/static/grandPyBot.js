@@ -15,15 +15,11 @@ $("form").on("submit", function(e){
 		var sectionElt = document.querySelector("section");
 		var pElt = document.createElement("p");
 		pElt.textContent = "Bien sûr fiston, voici l'adresse : " + elements["adress"];
-		sectionElt.appendChild(pElt);
-		var divMapElt = document.createElement("div");
-		divMapElt.id = "map";
-		divMapElt.style.height = "60%";
-		divMapElt.style.width = "60%";
-		divMapElt.style.margin = "auto";
-		sectionElt.appendChild(divMapElt);
+		sectionElt.insertAdjacentHTML(afterBegin, pElt);
+		var divMapElt = document.getElementById("map");
+		divMapElt.style.display = "block";
 		function initMap() {
-    		var map = new google.maps.Map(document.getElementById('map'), {
+    		var map = new google.maps.Map(divMapElt, {
     			center: {lat: elements["latlon"][0], lng: elements["latlon"][1]},
     			zoom: 8
   			});
@@ -39,7 +35,8 @@ $("form").on("submit", function(e){
 		initMap();
 		// Mask the loading picture and print a response
 		$('#loading').hide();
-
+$('<p>Deuxième élément bis</p>').insertAfter($('li:nth-child(2)'));
+Ajout d'un élément de liste à puces après le deuxième élément
 
 	    // Add a paragraph containing wikipedia info
 		var wikiElt = document.createElement("p");
