@@ -110,6 +110,7 @@ footer img
 
     #map
     {
+        margin: 15px auto 15px auto;
         width : 350px;
         height: 240px;
     }
