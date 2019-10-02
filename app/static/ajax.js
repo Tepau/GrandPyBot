@@ -11,10 +11,8 @@ function ajaxPost(url, data, callback, isJson) {
         } else {
             console.error(req.status + " " + req.statusText + " " + url);
             $('#loading').hide();
-            var sectionElt = document.querySelector("section");
-		    var pElt = document.createElement("p");
+            var pElt = document.getElementById("adress");
 		    pElt.textContent = "Erreur de Recherche, actualisez la page";
-		    sectionElt.appendChild(pElt);
         }
     });
     req.addEventListener("error", function () {
